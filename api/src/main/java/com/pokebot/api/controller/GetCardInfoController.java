@@ -13,8 +13,13 @@ public class GetCardInfoController {
         this.getCardInfoService = getCardInfoService;
     }
 
-    @GetMapping("/getCardInfo/{set}/{cardLocalId}")
-    public String getCardInfo(@PathVariable String set, @PathVariable String cardLocalId) {
-        return getCardInfoService.getCardInfo(set, cardLocalId);
+    @GetMapping("/getCardInfoWithSetAndLocalId/{set}/{cardLocalId}")
+    public String getCardInfoWithSetAndLocalId(@PathVariable String set, @PathVariable String cardLocalId) {
+        return getCardInfoService.getCardInfoWithSetAndLocalId(set, cardLocalId);
+    }
+
+    @GetMapping("/getCardInfoWithId/{id}")
+    public String getCardInfoWithId(@PathVariable String id) {
+        return getCardInfoService.getCardInfoWithId(id);
     }
 }
